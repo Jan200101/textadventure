@@ -6,7 +6,7 @@
 
 class Weapon
 {
-   private:
+   protected:
     std::string name;
     uint16_t damage;
     uint16_t durability;
@@ -14,17 +14,24 @@ class Weapon
     uint8_t critamplifier;
 
    public:
+    Weapon();
+
     std::string getName();
     void setName(std::string);
 
     uint16_t getDamage();
     void setDamage(uint16_t);
 
+    uint16_t getDurability();
+    void setDurability(uint16_t);
+
     uint8_t getCritchance();
-    void setCritchange(uint8_t);
+    void setCritchance(uint8_t);
 
     uint8_t getCritamplifier();
     void setCritamplifier(uint8_t);
+
+    uint16_t attack(bool msgoutput = false);
 };
 
 #endif // WEAPON_H
