@@ -4,6 +4,15 @@
 #include <ctime>
 #include <iostream>
 
+/**
+ * @file weapon.hpp
+ * @brief Source for the Weapon class
+ */
+
+/**
+ * constructor sets random salt to the current time
+ * randomness is used in Weapon::attack
+ */
 Weapon::Weapon()
 {
     srand(time(NULL));
@@ -59,6 +68,14 @@ void Weapon::setCritamplifier(uint8_t paramAmp)
     this->critamplifier = paramAmp;
 }
 
+/**
+ * @param msgoutput declares if the function should output text to the stdout or not
+ * @returns damage delt (multiplied by critamplifier)
+ *
+ * checks if the weapon has any durability left,
+ * decreases the durability by 1,
+ * calculates if a crit happens or not (Salt set in Weapon::Weapon)
+ */
 uint16_t Weapon::attack(bool msgoutput)
 {
     if (durability <= 0)
@@ -70,14 +87,14 @@ uint16_t Weapon::attack(bool msgoutput)
         return 0;
     }
 
-    setDurability(this->durability - 1);
+    this->setDurability(this->getDurability() - 1);
 
     if ((rand() % 255) + 1 < this->critchance)
     {
         if (msgoutput)
         {
             std::cout << "CRIT" << '\n'
-                      << '-' << this->damage << std::endl;
+                      << '-' << this->damage * this->critamplifier << std::endl;
         }
         return this->damage * this->critamplifier;
     }

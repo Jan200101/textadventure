@@ -1,5 +1,13 @@
 #include "weapons/sword.hpp"
 
+/**
+ * @file sword.cpp
+ * @brief source for the Sword weapon
+ */
+
+/**
+ * sets up various values inherited from Weapon
+ */
 Sword::Sword()
 {
     this->setName("Sword");

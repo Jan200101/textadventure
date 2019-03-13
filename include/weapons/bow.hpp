@@ -3,8 +3,19 @@
 
 #include "weapon.hpp"
 
-#include <cstdlib>
+#include <cstdint>
 
+/**
+ * @file bow.hpp
+ * @brief header for the Bow weapon
+ *
+ * inhertits from Weapon
+ */
+
+/**
+ * creates interfaces for ranged weapons
+ * may get moved into a dedicated rangedweapon header
+ */
 class Bow : public Weapon
 {
    protected:

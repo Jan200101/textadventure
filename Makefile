@@ -26,9 +26,9 @@ SRC_DIR          = src
 INC_DIR          = include
 
 CXX_SRC_FILES   := $(wildcard $(SRC_DIR)/*.cpp) \
-				   $(wildcard $(SRC_DIR)/weapons/*.cpp)
+				   $(wildcard $(SRC_DIR)/*/*.cpp)
 CC_SRC_FILES    := $(wildcard $(SRC_DIR)/*.c) \
-				   $(wildcard $(SRC_DIR)/weapons/*.c)
+				   $(wildcard $(SRC_DIR)/*/*.c)
 
 OBJ_FILES       := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/$(TARGET)/%.o,$(CXX_SRC_FILES)) \
                    $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/$(TARGET)/%.o,$(CC_SRC_FILES))
@@ -60,7 +60,8 @@ WIN:
 
 directories:
 	$(PREFIX)$(MKDIR) $(OUT_DIR)/$(TARGET)
-	$(PREFIX)$(MKDIR) $(OBJ_DIR)/$(TARGET)/weapons
+	$(PREFIX)$(MKDIR) $(OBJ_DIR)/$(TARGET)/weapons \
+					  $(OBJ_DIR)/$(TARGET)/entities
 
 $(OBJ_DIR)/$(TARGET)/%.o: $(SRC_DIR)/%.c
 	@echo [CC] $@

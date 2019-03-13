@@ -6,11 +6,6 @@
 
 int main()
 {
-    Sword* sword = new Sword;
-    while (sword->attack(true))
-    {
-    }
-
     Bow* knife = new Bow;
     while (knife->attack(true))
     {

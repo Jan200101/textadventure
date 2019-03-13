@@ -1,9 +1,18 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
-#include <cstdlib>
+#include <cstdint>
 #include <string>
 
+/**
+ * @file weapon.hpp
+ * @brief header for the Weapon class
+ */
+
+/**
+ * abstract class for weapons
+ * see include/weapons
+ */
 class Weapon
 {
    protected:
