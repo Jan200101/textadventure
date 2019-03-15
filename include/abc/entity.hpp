@@ -22,6 +22,9 @@ class Entity
     uint16_t defense;
 
    public:
+    std::string getName();
+    void setName(std::string);
+
     uint16_t getHealth();
     void setHealth(uint16_t);
 

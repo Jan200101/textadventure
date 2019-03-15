@@ -1,4 +1,4 @@
-#include "weapon.hpp"
+#include "abc/weapon.hpp"
 
 #include <stdlib.h>
 #include <ctime>
@@ -106,4 +106,33 @@ uint16_t Weapon::attack(bool msgoutput)
         }
         return this->damage;
     }
+}
+
+/**
+ * implements checks for ammunition then fallsback onto Weapon::attack
+ */
+uint16_t RangedWeapon::attack(bool msgoutput)
+{
+    if (this->ammunition <= 0)
+    {
+        if (msgoutput)
+        {
+            std::cout << "No arrows left" << std::endl;
+        }
+        return 0;
+    }
+
+    this->setAmmunition(this->getAmmunition() - 1);
+
+    return Weapon::attack(msgoutput);
+}
+
+uint16_t RangedWeapon::getAmmunition()
+{
+    return this->ammunition;
+}
+
+void RangedWeapon::setAmmunition(uint16_t paramAmmo)
+{
+    this->ammunition = paramAmmo;
 }

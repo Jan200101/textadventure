@@ -1,7 +1,7 @@
 #ifndef GOBLIN_H
 #define GOBLIN_H
 
-#include "entity.hpp"
+#include "abc/entity.hpp"
 
 /**
  * @file goblin.hpp
@@ -13,6 +13,8 @@
  */
 class Goblin : public Entity
 {
+   public:
+    Goblin();
 };
 
 #endif // GOBLIN_H

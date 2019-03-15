@@ -1,9 +1,19 @@
-#include "entity.hpp"
+#include "abc/entity.hpp"
 
 /**
  * @file entity.cpp
  * @brief source for the Entity class
  */
+
+std::string Entity::getName()
+{
+    return this->name;
+}
+
+void Entity::setName(std::string paramName)
+{
+    this->name = paramName;
+}
 
 uint16_t Entity::getHealth()
 {

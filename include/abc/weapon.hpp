@@ -43,4 +43,16 @@ class Weapon
     uint16_t attack(bool msgoutput = false);
 };
 
+class RangedWeapon : public Weapon
+{
+   protected:
+    uint16_t ammunition;
+
+   public:
+    uint16_t attack(bool msgoutput = false);
+
+    uint16_t getAmmunition();
+    void setAmmunition(uint16_t);
+};
+
 #endif // WEAPON_H

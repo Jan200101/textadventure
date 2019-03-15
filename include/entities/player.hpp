@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "entity.hpp"
+#include "abc/entity.hpp"
 
 /**
  * @file player.hpp
@@ -13,6 +13,8 @@
  */
 class Player : public Entity
 {
+   public:
+    Player();
 };
 
 #endif // PLAYER_H
