@@ -1,7 +1,7 @@
 #ifndef GOBLIN_H
 #define GOBLIN_H
 
-#include "abc/entity.hpp"
+#include "base/entity.hpp"
 
 /**
  * @file goblin.hpp

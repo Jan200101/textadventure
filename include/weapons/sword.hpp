@@ -1,7 +1,7 @@
 #ifndef SWORD_H
 #define SWORD_H
 
-#include "abc/weapon.hpp"
+#include "base/weapon.hpp"
 
 /**
  * @file sword.hpp

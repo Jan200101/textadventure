@@ -1,7 +1,7 @@
 #ifndef BOW_H
 #define BOW_H
 
-#include "abc/weapon.hpp"
+#include "base/weapon.hpp"
 
 #include <cstdint>
 

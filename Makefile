@@ -59,10 +59,10 @@ WIN:
 	$(PREFIX)$(MINGW-MAKE) STATIC=1
 
 directories:
-	$(PREFIX)$(MKDIR) $(OUT_DIR)/$(TARGET)
-	$(PREFIX)$(MKDIR) $(OBJ_DIR)/$(TARGET)/weapons \
+	$(PREFIX)$(MKDIR) $(OUT_DIR)/$(TARGET) \
+					  $(OBJ_DIR)/$(TARGET)/base \
 					  $(OBJ_DIR)/$(TARGET)/entities \
-					  $(OBJ_DIR)/$(TARGET)/abc
+					  $(OBJ_DIR)/$(TARGET)/weapons \
 
 $(OBJ_DIR)/$(TARGET)/%.o: $(SRC_DIR)/%.c
 	@echo [CC] $@
