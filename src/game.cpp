@@ -32,8 +32,8 @@ Game::~Game()
 std::string Game::fetchinput()
 {
     std::cout << PS1;
-    getline(std::cin, lastcommand);
     std::cin.clear();
+    getline(std::cin, lastcommand);
     return lastcommand;
 }
 
@@ -107,7 +107,13 @@ int Game::run()
     {
         command = parsecommand(fetchinput());
 
-        if (command.empty())
+        if (std::cin.eof())
+        {
+            std::cout << std::endl;
+            break;
+        }
+
+        else if (command.empty())
         {
             continue;
         }
