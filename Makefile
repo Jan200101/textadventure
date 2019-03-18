@@ -61,6 +61,8 @@ WIN:
 directories:
 	$(PREFIX)$(MKDIR) $(OUT_DIR)/$(TARGET) \
 					  $(OBJ_DIR)/$(TARGET) \
+					  $(OBJ_DIR)/$(TARGET)/base \
+  					  $(OBJ_DIR)/$(TARGET)/items \
 
 $(OBJ_DIR)/$(TARGET)/%.o: $(SRC_DIR)/%.c
 	@echo [CC] $@
