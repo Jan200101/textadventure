@@ -48,7 +48,7 @@ void Room::randomize()
 
     // item randomizatin per room
 
-    this->itemamount = (rand() % 7) + (rand() % 2);
+    this->itemamount = (rand() % 3) + (rand() % 2);
 
     for (int i = 0; i < this->itemamount; ++i)
     {

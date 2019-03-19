@@ -6,12 +6,13 @@
 #include <string>
 #include <vector>
 
-#define WIDTH 5
-#define LENGTH 5
+// SIZE OF MAP IN ROOMS
+#define WIDTH 30
+#define LENGTH 30
 
-#define PS1 ">> "
+#define PS1 "> "
 
-#define VERSION "0.4.0"
+#define VERSION "0.4.8"
 
 class Game
 {

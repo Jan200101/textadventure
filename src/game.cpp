@@ -13,6 +13,7 @@ Game::Game()
     this->generated = false;
 
     curroom = nullptr;
+
     for (int l = 0; l < LENGTH; ++l)
     {
         for (int w = 0; w < WIDTH; ++w)
@@ -20,6 +21,8 @@ Game::Game()
             rooms[l][w] = nullptr;
         }
     }
+
+    viewpoint = 0;
 
     srand(time(NULL));
 }
@@ -63,6 +66,10 @@ void Game::generaterooms(bool verbose)
             }
         }
     }
+
+    this->curroom = rooms[rand() % LENGTH][rand() % WIDTH];
+
+    this->viewpoint = rand() % 4;
 
     this->generated = true;
 }
@@ -123,9 +130,16 @@ int Game::run()
             break;
         }
 
+        else if (command[0] == "room")
+        {
+            std::cout << (int)this->curroom->getID() % WIDTH << " "
+                      << (int)this->curroom->getID() / WIDTH << std::endl;
+        }
+
         else if (command[0] == "help")
         {
             std::cout << "help   show this message\n"
+                         "room   get current room ID"
                          "exit   close the game\n\n"
                          "If you see this remind sentry to write a proper command interpreter instead of just lazily slapping a few if statements together just so he can focus on generation and randomization insteadl. Thanks"
                       << std::endl;
@@ -138,5 +152,6 @@ int Game::run()
         // TODO write interpeter
     }
 
+    std::cout << std::endl; // flush stream at last
     return 0;
 }
