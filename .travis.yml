@@ -14,25 +14,24 @@ script:
 - eval "${MAKE}" test
 
 before_deploy:
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)
-  - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
-  - git config --local user.name "$USER_NAME"
-  - git config --local user.email "$USER_EMAIL"
-  - git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
+- export TRAVIS_TAG="1.0.$TRAVIS_BUILD_NUMBER"
+- echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
+- git config --local user.name "$USER_NAME"
+- git config --local user.email "$USER_EMAIL"
+- git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
 
 deploy:
   provider: releases
   api_key:
-    "VVAVBr31TAhay4HQW6Ty6fMvCAi9M2Sx+hkqlorzcRFHfCLJm+yjYxaercpbFJMwDmLoGHMikLNKRO3Tn+vESuCrnXk6qoq6f5AUjY2pvrVMohcW25HVerJSWJpKh8FBsj+paznpjvMnntJJ8hQNIfROnhl1TgtOfvAiDUQPbZJQmnC8nvda+gMZyPJoaEBtA1bBqXUvqAW+4xZupgamaTZTi+SLU712HHI9fEsrMvsOnQBUCl5RegMeTLd5TX6GDeFzUZ9gkqD7tDtxI2CnwEZnrck5/5RcN0fNasoEUenYzybwd+AZADfP96Wbabukh6DPyR14tpPvg3LIyVaYuurTPWjxVPzjyMQW1OND6mrEvgwXDKx7yr770JFXoB76Q7EDkmXa9mIaGk9EY7F4pJuUni/pD/YQJAU702qd/u8St/FyhyiDQp+j+5zgiXFOHQnaDWBXXjH1ei932DJXhHKtffDVi1dTnbJPb6dbJJ1TOWKxfNHYqWk7jQIMNhhHCpv0RzPrAREMMbWmXnqUeOjgllKRmSaePMZnC3xVVHCjnb4CvvdeesX4UOC2SALeMP9RU5oCBOl+jLaoWy8t9bKT3S998tZbPdLdof4Eau5CTXBejbFeCclJIaUZ393S29ayDmVSLfWCmqfJrGgrLVU6ZjDhA6GD4EbFvq4GaLs="
+    secure: "WeaJNmqZFFOpquQM/Y+ocdhiIg6MA+SmojN9VD4LowG+vZo/pXov3dF+MwPXpSpV7th3SA5DdjyXwLSKCnuDAy3McQdMfZZzt6VTKqtt0nzG/9yU+AnWKcCwa2CzaxPCwKQEl2y+sCRvcoFtP2q8j8jiBWRabperlA2Zs5O76qrEnWP+TbXdf9rYzHbyHI2iu2/gn0ZtYz4D88yQ/6P8EmDj/hbDR8/cMn+hZX+m0qeJYvk0krG4fNmyU9iIXqh7GsofQG4cakHiL8apLN8IUewllT/16MmN7KJ84gkLPPJtXWy0KooQ+UQ4nUN5tX69cx6qSUBypzni4if9WxWZijAL0HIJG32GdiFoVz/1CTWv7BkCP85x9/79XQ4+ENw8RwhSVXswdILOcjOtvFcCVjPuhY1VmzBTJEZM+p/nIqDXVH99TE3cF/HF+Bru1kkwgmd30qHw6/9FNQqebmzliH438l9maEgOo/2z8ynmmFqXcVJUoGxmjMldBZoQas1Ch0Oe0kuNORcui+fFsfCocdcTo4maa3PeJwxyXUd5DnRUvv3AI+WDdprTIY8Hx78HiLhCMccaN1E26Losy+HJ1CGPSftm+GT53ne0EGzYZ3DYrgP2lwHP5iKZWwSLGPOCqGVq0ct7CBTOnwi6CI13Guikt81b4/cJWlUF9lB8WDk="
   skip_cleanup: true
   draft: false
   file_glob: true
   tag_name: $TRAVIS_TAG
-  name: $TRAVIS_TAG
+  name: "Automated build $TRAVIS_COMMIT"
   target_commitish: $TRAVIS_COMMIT
   overwrite: true
   file: bin/Release/*
   on:
     repo: Jan200101/textadventure
     branch: rise
-    tags: true
