@@ -21,6 +21,14 @@ before_deploy:
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
 
+before_deploy:
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)
+  - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
+  - git config --local user.name "$USER_NAME"
+  - git config --local user.email "$USER_EMAIL"
+  - git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
+
+
 deploy:
   provider: releases
   api_key:
@@ -28,6 +36,10 @@ deploy:
   skip_cleanup: true
   draft: false
   file_glob: true
+  tag_name: $TRAVIS_TAG
+  name: $TRAVIS_TAG
+  target_commitish: $TRAVIS_COMMIT
+  overwrite: true
   file: bin/Release/*
   on:
     repo: Jan200101/textadventure
