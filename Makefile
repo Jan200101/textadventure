@@ -83,6 +83,9 @@ rmdirectories:
 
 clean: rmdirectories
 
+test: default_target
+	@echo exit | ./$(OUT_DIR)/$(TARGET)/$(PROJECT) > /dev/null # launches the binary and exits immediately
+
 loc:
 	-find . -name '*.cpp' -o -name '*.c' -o -name '*.h' -o -name '*.hpp'| xargs wc -l
 

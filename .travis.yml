@@ -1,0 +1,25 @@
+matrix:
+  include:
+    - os: linux
+      env:
+        - MAKE = "make"
+
+    - os: windows
+      env:
+        - MAKE="mingw32-make"
+
+language: cpp
+
+script:
+  - eval "${make}"
+  - eval "${make}" test
+
+deploy:
+  provider: releases
+  api_key:
+    secure: EgL7OimJonQwKQRWFZAOQ7xebpjQM6uB8kLnNINoHtW2iepy7BvQx1w3r7krx8oNi7hzHa6lqhhqRqpBDQg43zxXSA2AW8Us/B/i/0WtcZWzITXVStNQclcwWVX6zP48T1VK4V0IxrfuQ1R+Y8W2bpYEUiIzE5iGnXTwACtzoCfLXTY+QqaCT6L44ZYEdskeaNAiBA1pCJOM+JJL6eNNxlHAevykBK2Joi6zoMXwpxXyJ/oxa4kTlcLu4FCk4DhgeADgJiQYog4BotlsY07wUwX+A8nJ1Cp7tuAf1L7jn+9w+K+swoNhaDwLGDyJFGLIbjvv7Dt1tibs1/Xde7en6Qt2c1A/icgci2QO0xiMAZLaO5nzqUF2p1UPMgmvuNCL/V0teBFmSOHvbDt8k4/A9NuA0fXzArS0c8dYnMjCvS+qJEQ3hMPpf+VLvcpbTqjUi0ffMBzTX1mH1085K9PKdFTnAgCfYC3tgNgUIsYlnUmI0euq25fGpjoTLQJ9IKD4Fg/vi62/FoUnsMsdQHSMgt6V0GBNH8fTC9ugYW/lIitMSj0Q5Su/ldNhDrFNkM+HvmFlizrCgLj1DJUcBiGnqa+5dNuRRmgYNdX7TFwW9+dgE7pHQKFpIDLdesPau6z+78k/SbFVPWuYEi7AnK31c9Gb7GTwVLeDfWwYcsFK3IM=
+  skip_cleanup: true
+  file: bin/Release/textadventure
+  on:
+    repo: Jan200101/textadventure
+    branch: rise
