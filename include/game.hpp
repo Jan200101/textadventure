@@ -12,7 +12,7 @@
 
 #define PS1 "> "
 
-#define VERSION "0.4.8"
+#define VERSION "0.5.0"
 
 class Game
 {
