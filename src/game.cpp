@@ -52,7 +52,7 @@ std::vector<std::string> Game::parsecommand(std::string command)
     return strings;
 }
 
-void Game::generaterooms(bool verbose)
+void Game::generaterooms()
 {
     for (unsigned int l = 0; l < LENGTH; ++l)
     {
@@ -60,10 +60,10 @@ void Game::generaterooms(bool verbose)
         {
             rooms[l][w] = new Room(w + (l * WIDTH));
             rooms[l][w]->randomize();
-            if (verbose)
-            {
-                printf("Room(%i, %i:%i) randomized\n", rooms[l][w]->getID(), l, w);
-            }
+
+#ifdef DEBUG
+            printf("%s(%d) Room(%i, %i:%i) randomized\n", __FILE__, __LINE__, rooms[l][w]->getID(), l, w);
+#endif // DEBUG
         }
     }
 
@@ -102,7 +102,7 @@ void Game::introduction()
 
 int Game::run()
 {
-    generaterooms(false);
+    generaterooms();
 
     std::vector<std::string> command;
     unsigned long int length;
@@ -141,8 +141,7 @@ int Game::run()
             break;
         }
 
-        else if (
-            command[0] == "direction")
+        else if (command[0] == "direction")
         {
             switch (getViewpoint())
             {
@@ -163,15 +162,19 @@ int Game::run()
 
         else if (command[0] == "turn")
         {
-            if (length > 1 && (command[1] == "left" || command[1] == "right"))
+            if (length > 1)
             {
                 if (command[1] == "right")
                 {
                     setViewpoint(getViewpoint() + 1);
                 }
-                else
+                else if (command[1] == "left")
                 {
                     setViewpoint(getViewpoint() - 1);
+                }
+                else
+                {
+                    std::cout << "Argument is neither left or right" << std::endl;
                 }
             }
             else
@@ -216,6 +219,15 @@ int Game::run()
             std::cout << id / WIDTH << " "
                       << id % WIDTH << std::endl;
         }
+
+#ifdef DEBUG
+
+        else if (command[0] == "go")
+        {
+            printf("%s(%d):TODO:implement\n", __FILE__, __LINE__);
+        }
+
+#endif // DEBUG
 
         else if (command[0] == "help")
         {

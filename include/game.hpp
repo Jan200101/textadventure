@@ -7,8 +7,8 @@
 #include <vector>
 
 // SIZE OF MAP IN ROOMS
-#define WIDTH 30
-#define LENGTH 30
+#define WIDTH 5
+#define LENGTH 5
 
 #define PS1 "> "
 
@@ -39,7 +39,7 @@ class Game
     std::string fetchinput();
     std::vector<std::string> parsecommand(std::string);
 
-    void generaterooms(bool verbose = false);
+    void generaterooms();
 
     uint8_t getViewpoint();
     void setViewpoint(uint8_t);
