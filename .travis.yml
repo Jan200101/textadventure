@@ -26,7 +26,7 @@ deploy:
   api_key:
     secure: "e+LGKMbqxdqgSxSnEMHgghPtA/3XdNDGtiDQ6M801URzaYji9qabOsxnMd2h8uaWgQ5cb5LGJAGGwuxoL2/EB3rLf+7wQu74uBU5IZFZNOEttyorQk0g84txqen1l0bUEgFxPca9Dv1Zt5YiLQuJIwEjIKvoHwoTVnCuRz3VpX4YUcWP2ePQL8InXfL4aVBUByA63HaAf0B0XK9M851Wmz7/SQ4upC4OAom5ckFnEQiGYpX/gk/ggJW+5CrzUh2DbiO8Ad8qWHFTeYCNRUJ5Ux6HTAHBthGV7/mw3LJpkhtChWS7XF+bUGLcQ9EAlSsm1KafbIeYwiPaMfrFpyzjjkQvRmSwM8qZgbSmrFDPqk1HrPajbTdAKIbEbEzVz9NY9mEu2EUFu3ETdSTpP21oMn8dNJiLvZdtAoKaUQhqzVFRUErTzBuwfCtqI1R/HaSh1Jb4P0rK8o6csvSDFVsnDdhuHpKtMcD5mk3mFaSQvr80PCi4TnS7xeMS9pIN2x81y2RWMLUdKETMq6KGinitDm5UNizqFFmkfJZmECfuCXJLNyZHQxwvy5QhmReu0Rvi/aEf525rgUYQMTRkzknpdXukFPx+flDi7TSmuY82fjgxu+I0SHM1q/HYeuJeMt+1+FMVRVIPODFvVw1fOZVXYa5cpLo36GsbCebhXTNSNPg="
   skip_cleanup: true
-  draft: true
+  draft: false
   file_glob: true
   file: bin/Release/*
   on:
