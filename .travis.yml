@@ -5,7 +5,7 @@ matrix:
     - MAKE="make"
   - os: windows
     env:
-    - MAKE="mingw32-make"
+    - MAKE="mingw32-make STATIC=1"
 
 language: cpp
 
