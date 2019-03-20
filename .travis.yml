@@ -2,7 +2,7 @@ matrix:
   include:
     - os: linux
       env:
-        - MAKE = "make"
+        - MAKE="make"
 
     - os: windows
       env:
@@ -11,8 +11,8 @@ matrix:
 language: cpp
 
 script:
-  - eval "${make}"
-  - eval "${make}" test
+  - eval "${MAKE}"
+  - eval "${MAKE}" test
 
 deploy:
   provider: releases
