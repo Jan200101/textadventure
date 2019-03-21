@@ -62,11 +62,10 @@ void Room::randomize()
     this->itemamount = 0;
 
     Item* pool[] = {
-        nullptr,
-        new Bush,
+        (new Bush),
     }; // TODO fill pool
 
-    const unsigned short poolsize = 2;
+    const unsigned short poolsize = 1;
 
     for (short i = 0; i < 4; ++i)
     {
@@ -75,7 +74,12 @@ void Room::randomize()
 
     // item randomizatin per room
 
-    unsigned short amount = (rand() % 7) + (rand() % 2);
+    unsigned short amount = 0;
+
+    for (unsigned short i = 0; i < MAXITEMSPAWNS; ++i)
+    {
+        amount += (rand() % 2);
+    }
 
     Item* obj;
 

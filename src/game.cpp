@@ -241,7 +241,7 @@ int Game::run()
             unsigned int amount = this->curroom->getItemamount();
             if (amount != 0)
             {
-                std::cout << "The rooms holds these items: \n";
+                std::cout << "The rooms holds these " << amount << " items:\n";
                 for (unsigned int i = 0; i < amount; ++i)
                 {
                     if (this->curroom->getItems()[i] != nullptr)
@@ -281,6 +281,7 @@ int Game::run()
          */
     }
 
+    rand(); // randomize after every command
     // std::cout << std::endl; // flush stream at last
     return 0;
 }

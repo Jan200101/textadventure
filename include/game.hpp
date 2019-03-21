@@ -12,7 +12,7 @@
 
 #define PS1 "> "
 
-#define VERSION "0.6.0"
+#define VERSION "0.6.1"
 
 /**
  * @file game.cpp

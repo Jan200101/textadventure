@@ -2,6 +2,7 @@
 #define ROOM_H
 
 #define MAXITEMS 10
+#define MAXITEMSPAWNS 6
 
 #include "base/item.hpp"
 
