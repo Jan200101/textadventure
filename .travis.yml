@@ -34,3 +34,4 @@ deploy:
   on:
     repo: Jan200101/textadventure
     branch: rise
+    tags: false
