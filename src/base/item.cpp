@@ -10,14 +10,16 @@ Item::Item()
     type = 0;
 }
 
+Item::Item(std::string paramName, std::string paramText, uint8_t paramType)
+{
+    name = paramName;
+    flavortext = paramText;
+    type = paramType;
+}
+
 std::string Item::getName()
 {
     return this->name;
-}
-
-void Item::setName(std::string paramName)
-{
-    this->name = paramName;
 }
 
 std::string Item::getFlavortext()
@@ -25,17 +27,7 @@ std::string Item::getFlavortext()
     return this->flavortext;
 }
 
-void Item::setFlavortext(std::string paramText)
-{
-    this->flavortext = paramText;
-}
-
 uint8_t Item::getType()
 {
     return this->type;
-}
-
-void Item::setType(uint8_t paramType)
-{
-    this->type = paramType;
 }

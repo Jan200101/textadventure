@@ -19,23 +19,22 @@ class Item
    protected:
     std::string name;
     std::string flavortext;
-
-    /*
-     * 0 None
-	 */
     uint8_t type;
 
    public:
     Item();
+    Item(std::string, std::string, uint8_t);
 
     std::string getName();
-    void setName(std::string);
 
     std::string getFlavortext();
-    void setFlavortext(std::string);
 
     uint8_t getType();
-    void setType(uint8_t);
+
+    enum Types
+    {
+        None
+    };
 };
 
 #endif // ITEM_H
