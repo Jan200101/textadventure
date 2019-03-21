@@ -779,6 +779,10 @@ WARN_LOGFILE           =
 
 INPUT                  = src
 INPUT                 += include
+INPUT                 += src/base
+INPUT                 += include/base
+INPUT                 += src/items
+INPUT                 += include/items
 INPUT                 += README.md
 
 # This tag can be used to specify the character encoding of the source files
