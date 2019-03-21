@@ -26,6 +26,7 @@ class Room
     bool* getExits();
 
     unsigned int getItemamount();
+    Item** getItems();
 
     void randomize();
 };

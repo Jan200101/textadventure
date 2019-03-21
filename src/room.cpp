@@ -1,4 +1,5 @@
 #include "room.hpp"
+#include "items/bush.hpp"
 
 #include <cstdlib>
 
@@ -35,11 +36,21 @@ unsigned int Room::getItemamount()
     return this->itemamount;
 }
 
+Item** Room::getItems()
+{
+    return this->items;
+}
+
 void Room::randomize()
 {
-    Item* pool[] = {nullptr}; // TODO fill pool
+    this->itemamount = 0;
 
-    const unsigned short poolsize = 1;
+    Item* pool[] = {
+        nullptr,
+        new Bush,
+    }; // TODO fill pool
+
+    const unsigned short poolsize = 2;
 
     for (short i = 0; i < 4; ++i)
     {
@@ -48,11 +59,18 @@ void Room::randomize()
 
     // item randomizatin per room
 
-    this->itemamount = (rand() % 3) + (rand() % 2);
+    unsigned short amount = (rand() % 7) + (rand() % 2);
 
-    for (int i = 0; i < this->itemamount; ++i)
+    Item* obj;
+
+    for (unsigned short i = 0; i < amount; ++i)
     {
-        items[i] = pool[rand() % poolsize];
+        obj = pool[rand() % poolsize];
+        if (obj != nullptr)
+        {
+            items[i] = obj;
+            ++this->itemamount;
+        }
     }
 
     this->israndom = true;

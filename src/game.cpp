@@ -229,6 +229,24 @@ int Game::run()
 
 #endif // DEBUG
 
+        else if (command[0] == "items")
+        {
+            unsigned int amount = this->curroom->getItemamount();
+            if (amount != 0)
+            {
+                std::cout << "The rooms holds these items: \n";
+                for (unsigned int i = 0; i < amount; ++i)
+                {
+                    if (this->curroom->getItems()[i] != nullptr)
+                        std::cout << " - " << this->curroom->getItems()[i]->getName() << std::endl;
+                }
+            }
+            else
+            {
+                std::cout << "There are no items in this room" << std::endl;
+            }
+        }
+
         else if (command[0] == "help")
         {
             std::cout << ""
@@ -236,7 +254,10 @@ int Game::run()
                          "direction          prints which direction you are facing\n"
                          "turn [left|right]  turns left or right\n"
                          "face [direction]   turns any direction in the sky\n"
+#ifdef DEBUG
                          "go [direction]     go any direction relative or absolute\n"
+#endif // DEBUG
+                         "items              shows all items in the current room\n"
                          "room               get current room ID\n"
                          "help               show this message\n"
                       // meh "If you see this remind sentry to write a proper command interpreter instead of just lazily slapping a few if statements together just so he can focus on generation and randomization insteadl. Thanks"
