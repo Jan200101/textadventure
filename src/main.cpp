@@ -17,6 +17,9 @@ int main(int argc, char** argv)
             {
                 std::cout << argv[0]
                           << " [-h] [-v]\n\n"
+#ifdef DEBUG
+                             "DEBUG BUILD \n"
+#endif // DEBUG
                              "Arguments:\n"
                              " -h, --help      display this message\n"
                              " -v, --version   show the program version\n"
