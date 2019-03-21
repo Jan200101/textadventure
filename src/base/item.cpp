@@ -1,5 +1,10 @@
 #include "base/item.hpp"
 
+/**
+ * @file item.cpp
+ * @brief Source file for the abstracted Item class
+ */
+
 Item::Item()
 {
     type = 0;

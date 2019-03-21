@@ -5,6 +5,16 @@
 
 #include "base/item.hpp"
 
+/**
+ * @file room.hpp
+ * @brief Header file for rooms
+ */
+
+/**
+ * @brief room class
+ *
+ * keep various information like exits anditems
+ */
 class Room
 {
    protected:

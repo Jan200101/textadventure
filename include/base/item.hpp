@@ -4,6 +4,16 @@
 #include <cstdint>
 #include <string>
 
+/**
+ * @file item.cpp
+ * @brief Header file for the abstracted Item class
+ */
+
+/**
+ * @brief abstracted Item class
+ *
+ * class designed to simplify item creation and randomization
+ */
 class Item
 {
    protected:

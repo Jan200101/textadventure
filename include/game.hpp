@@ -14,6 +14,14 @@
 
 #define VERSION "0.5.0"
 
+/**
+ * @file game.cpp
+ * @brief Source file for game runtime
+ *
+ * contains various preprocessor directives
+ * like map size, version of prefix
+ */
+
 class Game
 {
    protected:

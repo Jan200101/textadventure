@@ -3,6 +3,18 @@
 
 #include <cstdlib>
 
+/**
+ * @file room.cpp
+ * @brief Source file for rooms
+ */
+
+/**
+ * sets the idea,
+ * randomized flag,
+ * closes all exits for randomization,
+ * sets all possible to null,
+ * sets item amount to 0
+ */
 Room::Room(unsigned int id)
 {
     this->id = id;
@@ -41,6 +53,10 @@ Item** Room::getItems()
     return this->items;
 }
 
+/**
+ * randomizes exits and items
+ * item amount is randomized aswell
+ */
 void Room::randomize()
 {
     this->itemamount = 0;

@@ -5,8 +5,15 @@
 #include <sstream>
 
 #include <cstdio>
-#include <cstdlib>
 #include <ctime>
+
+/**
+ * @file game.cpp
+ * @brief Source file for game runtime
+ *
+ * contains various game runtime features
+ * like input fetching
+ */
 
 Game::Game()
 {

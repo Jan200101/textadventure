@@ -4,6 +4,13 @@
 #include <cstring>
 #include <iostream>
 
+/**
+ * @file main.cpp
+ *
+ * starts the game routine and
+ * handles cli flags
+ */
+
 int main(int argc, char** argv)
 {
     Game game;
@@ -34,7 +41,7 @@ int main(int argc, char** argv)
             }
             else
             {
-                std::cout << "Unknown flag " << argv[i] << std::endl;
+                std::cout << "unrecognized command line option  " << argv[i] << std::endl;
                 return 0;
             }
         }
