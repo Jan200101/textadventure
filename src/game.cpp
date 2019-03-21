@@ -97,7 +97,7 @@ void Game::setViewpoint(uint8_t view)
 
 void Game::introduction()
 {
-    // reason for this and license text
+    // includes reasoning and license text
     std::cout << "textadventure Copyright (C) 2019  Jan \"Sentry\" Drögehoff\n"
                  "This program comes with ABSOLUTELY NO WARRANTY;\n\n"
                  "Welcome to TEXTADVENTURE\n"
@@ -114,7 +114,9 @@ int Game::run()
     std::vector<std::string> command;
     unsigned long int length;
 
+#ifndef DEBUG
     introduction();
+#endif
 
     std::cout
         << "Type 'exit' to exit the game, keep in mind no progress is saved" << std::endl;
@@ -173,11 +175,11 @@ int Game::run()
             {
                 if (command[1] == "right")
                 {
-                    setViewpoint(getViewpoint() + 1);
+                    setViewpoint(viewpoint + 1);
                 }
                 else if (command[1] == "left")
                 {
-                    setViewpoint(getViewpoint() - 1);
+                    setViewpoint(viewpoint - 1);
                 }
                 else
                 {
