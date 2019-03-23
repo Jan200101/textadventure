@@ -233,7 +233,14 @@ int Game::run()
 
         else if (command[0] == "go")
         {
-            printf("%s(%d):TODO:implement\n", __FILE__, __LINE__);
+            if (length > 1)
+            {
+                printf("%s(%d):TODO:implement\n", __FILE__, __LINE__);
+            }
+            else
+            {
+                std::cout << "Argument missing:\nturn [left|right]" << std::endl;
+            }
         }
 
 #endif // DEBUG
