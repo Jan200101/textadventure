@@ -52,8 +52,10 @@ OBJ_EXT         := .o
 
 ifeq ($(PLATFORM),WINDOWS)
 	OUT_EXT     := .exe
-	CROSS       := i686-w64-mingw32-
 	STATIC      := 1
+	ifneq ($(HOSTPLATFORM),WINDOWS)
+		CROSS       := i686-w64-mingw32-
+	endif
 endif
 
 CXX_SRC_FILES   := $(wildcard $(SRC_DIR)/*.cpp) \
