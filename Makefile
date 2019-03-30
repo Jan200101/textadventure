@@ -54,7 +54,7 @@ ifeq ($(PLATFORM),WINDOWS)
 	OUT_EXT     := .exe
 	STATIC      := 1
 	ifneq ($(HOSTPLATFORM),WINDOWS)
-		CROSS       := i686-w64-mingw32-
+		CROSS   := i686-w64-mingw32-
 	endif
 endif
 
@@ -69,7 +69,6 @@ OBJ_FILES       := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/$(TARGET)/%$(OBJ_EXT),
 LIBS            := -I$(INC_DIR) -L$(SRC_DIR)
 COMMONFLAGS     := -Wall -Wextra -Winit-self -Wuninitialized -Wpointer-arith -Wcast-align -Wunreachable-code --ansi -Wpedantic
 COMMONFLAGS     += $(FLAGS) $(LIBS)
-LINKERFLAGS     := $(COMMONFLAGS) -fuse-ld=$(CROSS)ld$(CROSSSUFFIX)
 
 ifneq ($(STATIC), 0)
     COMMONFLAGS += -static
