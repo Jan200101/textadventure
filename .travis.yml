@@ -5,13 +5,13 @@ matrix:
     - MAKE="make"
   - os: windows
     env:
-    - MAKE="mingw32-make STATIC=1"
+    - MAKE="mingw32-make"
 
 language: cpp
 
 script:
-- eval "${MAKE}"
-- eval "${MAKE}" test
+- ${MAKE}
+- ${MAKE} test
 
 before_deploy:
 - export TRAVIS_TAG="1.0.$TRAVIS_BUILD_NUMBER"
