@@ -69,7 +69,6 @@ OBJ_FILES       := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/$(TARGET)/%$(OBJ_EXT),
 LIBS            := -I$(INC_DIR) -L$(SRC_DIR)
 COMMONFLAGS     := -Wall -Wextra -Winit-self -Wuninitialized -Wpointer-arith -Wcast-align -Wunreachable-code --ansi -Wpedantic
 COMMONFLAGS     += $(FLAGS) $(LIBS)
-LINKERFLAGS     := $(COMMONFLAGS) -fuse-ld=$(CROSS)ld$(CROSSSUFFIX)
 
 ifneq ($(STATIC), 0)
     COMMONFLAGS += -static
