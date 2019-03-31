@@ -37,6 +37,17 @@ Game::Game()
 Game::~Game()
 {
     std::cin.clear();
+
+    for (unsigned int l = 0; l < LENGTH; ++l)
+    {
+        for (unsigned int w = 0; w < WIDTH; ++w)
+        {
+            delete rooms[l][w];
+#ifdef DEBUG
+            printf("%s(%d) Room(%i:%i) deleted\n", __FILE__, __LINE__, l, w);
+#endif // DEBUG
+        }
+    }
 }
 
 std::string Game::fetchinput()
