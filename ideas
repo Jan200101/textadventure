@@ -1,0 +1,13 @@
+classes:
+	floor				holds room creation and management
+	room				hold item
+	object				base for objects
+	item(object)		class for items
+	container(object)	base for containers
+	chest(container)
+	entity				base for anything alive
+	player(entity)		class for the player character
+	npc(entity)			base for any npcs
+	human(npc)			class for human beings
+	weapon(object)      base for weapon objects
+	sword(weapon)		class for swords
